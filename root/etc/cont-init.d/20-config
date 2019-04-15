@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+
+mkdir -p /config
+# copy
+
+[[ ! -f /config/smartdns.conf ]] && cp /default/smartdns.conf /config/smartdns.conf
+
+# permissions
+chown abc:abc -R /config 

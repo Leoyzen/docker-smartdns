@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+
+exec \
+	s6-setuidgid root smartdns \
+        -f \
+        -c /config/smartdns.conf \
+        -p /run/smartdns.pid
