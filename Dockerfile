@@ -12,7 +12,7 @@ RUN \
 	echo "**** install packages ****" \
 	&& cd /tmp \
     && apk add --no-cache openssl jq libc6-compat curl \
-    && archive=$(curl -fSL https://api.github.com/repos/pymumu/smartdns/releases/${SMARTDNS_VERSION}|jq -r '.assets[]|select(.name|endswith("x86_64.tar.gz"))|.browser_download_url') \
+    && archive=$(curl -fSL https://api.github.com/repos/pymumu/smartdns/releases/${SMARTDNS_VERSION}|jq -r '.assets[]|select(.name|endswith("x86_64-all.tar.gz"))|.browser_download_url') \
 	&& curl -fSL ${archive} -o smartdns.tar.gz \
     && tar zxf smartdns.tar.gz \
     && cd smartdns \
